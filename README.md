@@ -1,4 +1,4 @@
-k# Subida-de-imagen
+# Subida-de-imagen
 Intentando subir imagen con preview...
 
 
