@@ -1,0 +1,68 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+.container
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0c2461;
+}
+.card
+{
+    border: 1px solid #fff;
+    height: 30rem;
+    width: 30rem;
+    text-align: center;
+    position: relative;
+    background: #000;
+}
+.card img
+{
+
+    max-width: 28rem;
+    max-height: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid blue;
+}
+.card-footer
+{
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+}
+.card-footer progress
+{
+    margin: 5px 0;
+    width: 100%;
+}
+.enviar
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background: #111;
+}
+.enviar input
+{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    width: 96px;
+    cursor: pointer;
+    background: #000;
+}

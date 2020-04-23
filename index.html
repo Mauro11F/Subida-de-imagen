@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Subir imagen con Javascript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <form class="card" action="upload.php" method="post" enctype="multipart/form-data">
+                <img id="img-preview"> <!-- su atributo src lo llenamos con la preview -->
+                <div class="card-footer">
+                    <input type="file" name="imagen" id="img-uploader">
+                    <progress id="upload-bar" value="0" max="100">0%</progress>
+                </div>
+                <div class="enviar">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            (function(){ // averiguar porque esta funcion asi...
+                function filePreview(input){
+                    if (input.files && input.files[0]) {
+
+                        let reader = new FileReader(); /* nos permite leer cualquier tipo de archivo*/
+                        reader.onload = function(e) {
+                            console.log(e);// visualizando el contenido de "e" para ver sus datos y utilizarlos(e.target.result)
+                            $('#img-preview').after("<img src='"+e.target.result+"' />");
+                            /* intando poner una barra de carga de progreso */
+                            //let pregress = (e.loaded * 100)/ e.total;
+                            //console.log(pregress);
+
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+
+                $('#img-uploader').change(function(){
+                    filePreview(this);
+                });
+            })();
+        </script>
+    </body>
+</html>
